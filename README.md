@@ -6,17 +6,7 @@ This project provisions a complete Windows Server 2022 infrastructure on AWS usi
 
 - [Architecture Overview](#architecture-overview)
 - [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-- [Modules](#modules)
-- [Deployment Guide](#deployment-guide)
-- [Post-Deployment Configuration](#post-deployment-configuration)
-- [Connecting to the Server](#connecting-to-the-server)
-- [Useful Commands](#useful-commands)
-- [Troubleshooting](#troubleshooting)
-- [Clean Up](#clean-up)
-- [Cost Estimates](#cost-estimates)
+- [AWS Requirements](#aws-requirements)
 
 ## 🏗 Architecture Overview
 
