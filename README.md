@@ -28,7 +28,7 @@ This infrastructure deploys:
 - **S3 Bucket** with versioning and encryption
 - **Active Directory Domain Services** (post-deployment)
 - **Auto-launch Notepad GPO** (user logon)
-- **Daily Reboot Scheduled Task** (3:00 AM)
+- **Daily Reboot Scheduled Task** (12:00 PM)
 
 ## 📝 Prerequisites
 
