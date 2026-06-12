@@ -8,7 +8,7 @@ project_name = "windows-ec2"
 
 
 # ============================================
-# CONFIGURACIÓN DE LA INSTANCIA EC2
+# CONFIGURATION EC2 INSTANCE
 # ============================================
 key_name      = "dev-key-pair"
 instance_type = "t3.medium"
@@ -16,7 +16,7 @@ associate_eip = false
 enable_termination_protection = false
 
 # ============================================
-# CONFIGURACIÓN DEL VOLUMEN ROOT
+# CONFIGURATION ROOT VOLUME
 # ============================================
 root_volume_config = {
   type       = "gp3"
@@ -27,18 +27,18 @@ root_volume_config = {
 }
 
 # ============================================
-# VOLÚMENES ADICIONALES (NINGUNO PARA DEV)
+# ADITINAL VOLUMES
 # ============================================
 additional_volumes = []
 
 # ============================================
-# CONFIGURACIÓN DEL SECURITY GROUP
+# CONFIGURATION SECURITY GROUPS
 # ============================================
 security_group_name = "windows-rdp-dev"
 allowed_rdp_cidr_blocks = ["0.0.0.0/0"]
 rdp_port = 3389
 
-# Reglas de salida (egress)
+# RULES (egress)
 egress_rules = [
   {
     cidr_blocks      = ["0.0.0.0/0"]
@@ -106,21 +106,21 @@ egress_rules = [
   }
 ]
 
-# Reglas de ingreso adicionales (ninguna por ahora)
+# INGRESS RULES 
 ingress_rules = []
 
 # ============================================
-# CONFIGURACIÓN DEL BUCKET S3
+# CONFIGURATION S3 BUCKET
 # ============================================
 bucket_name_prefix       = "bucket-911"
 enable_bucket_versioning = true
 enable_bucket_encryption = true
 
-# Reglas de ciclo de vida (ninguna para desarrollo)
+# LIFECYCLE RULES
 bucket_lifecycle_rules = []
 
 # ============================================
-# TAGS (ETIQUETAS)
+# TAGS (LABELS)
 # ============================================
 tags = {
   CostCenter = "Development"

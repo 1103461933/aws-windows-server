@@ -10,34 +10,34 @@ provider "aws" {
   }
 }
 
-# Locals para configuración de usuario local
+# Locals to create  windows user
 locals {
   admin_username = "admin-local"
   admin_password = "Windows2026!"
   
   user_data_script = <<-POWERSHELL
     <powershell>
-    # Crear usuario local administrador
+    # Create administrator user
     $Username = "${local.admin_username}"
     $Password = "${local.admin_password}"
     
-    # Crear usuario
+    # Create user
     $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
     New-LocalUser -Name $Username -Password $SecurePassword -FullName "Local Admin" -Description "Administrador local"
     
-    # Agregar al grupo Administradores
+    # Add adminisytrators group
     Add-LocalGroupMember -Group "Administrators" -Member $Username
     
-    # Configurar RDP
+    # Configure RDP
     Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
     New-NetFirewallRule -DisplayName "Allow RDP" -Profile Any -Action Allow -Protocol TCP -LocalPort 3389
     
-    Write-Host "Usuario $Username creado exitosamente"
+    Write-Host "User $Username created sucessfully"
     </powershell>
   POWERSHELL
 }
 
-# Data source para VPC por defecto
+# Data source FOR  VPC 
 data "aws_vpc" "default" {
   default = true
 }
